@@ -9,17 +9,18 @@
     tools:context=".GameTicFragment">
 
     <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-
+        android:layout_margin="20dp"
+        android:textColor="@color/black"
         android:text="@string/game_tic_tac"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="50dp"
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/zero_zero_tic"
@@ -58,7 +59,7 @@
     <LinearLayout
 
         android:layout_width="wrap_content"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="50dp"
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/two_zero_tic"
