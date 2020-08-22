@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Tic_Tac_4Row</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tic_Tac_toe">Tic Tac Toe</string>
+    <string name="four_in_aRow">4 in a Row</string>
 </resources>
