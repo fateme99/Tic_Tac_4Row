@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 public class Game4InRowFragment extends Fragment {
 
     public Game4InRowFragment() {
-        // Required empty public constructor
+
     }
 
     @Override

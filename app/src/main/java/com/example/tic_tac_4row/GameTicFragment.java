@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 public class GameTicFragment extends Fragment {
 
     public GameTicFragment() {
-        // Required empty public constructor
+
     }
 
 

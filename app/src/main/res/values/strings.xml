@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tic_Tac_toe">Tic Tac Toe</string>
     <string name="four_in_aRow">4 in a Row</string>
+    <string name="game_tic_tac">Game : Tic Tac Toe</string>
+    <string name="game_row">Game : 4 in a Row</string>
 </resources>

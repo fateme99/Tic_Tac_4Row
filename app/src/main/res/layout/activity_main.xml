@@ -18,7 +18,6 @@
             android:layout_width="0dp"
             android:text="@string/tic_Tac_toe"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:layout_marginRight="5dp"
 
             android:layout_height="wrap_content"/>
@@ -26,7 +25,6 @@
             android:id="@+id/four_in_row_btn"
             android:text="@string/four_in_aRow"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
