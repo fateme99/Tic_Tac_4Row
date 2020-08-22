@@ -22,12 +22,15 @@
         android:layout_marginTop="200dp"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/zero_zero_tic"
             android:layout_width="75dp"
             android:layout_height="75dp"/>
         <Button
+            android:id="@+id/zero_one_tic"
             android:layout_width="75dp"
             android:layout_height="75dp"/>
         <Button
+            android:id="@+id/zero_two_tic"
             android:layout_width="75dp"
             android:layout_height="75dp"/>
 
@@ -38,12 +41,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/one_zero_tic"
             android:layout_width="75dp"
             android:layout_height="75dp"/>
         <Button
+            android:id="@+id/one_one_tic"
             android:layout_width="75dp"
             android:layout_height="75dp"/>
         <Button
+            android:id="@+id/one_two_tic"
             android:layout_width="75dp"
             android:layout_height="75dp"/>
 
@@ -55,12 +61,15 @@
         android:layout_marginBottom="200dp"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/two_zero_tic"
             android:layout_width="75dp"
             android:layout_height="75dp"/>
         <Button
+            android:id="@+id/two_one_tic"
             android:layout_width="75dp"
             android:layout_height="75dp"/>
         <Button
+            android:id="@+id/two_two_tic"
             android:layout_width="75dp"
             android:layout_height="75dp"/>
 
