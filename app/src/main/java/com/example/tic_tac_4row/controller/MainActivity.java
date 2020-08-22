@@ -1,4 +1,4 @@
-package com.example.tic_tac_4row;
+package com.example.tic_tac_4row.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.tic_tac_4row.R;
 
 public class MainActivity extends AppCompatActivity {
     private Button mButton_tic,mButton_row;

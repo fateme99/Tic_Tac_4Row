@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="@color/four_row_bg"
-    tools:context=".Game4InRowFragment">
+    tools:context=".controller.Game4InRowFragment">
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
