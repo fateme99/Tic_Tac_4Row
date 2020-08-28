@@ -1,4 +1,4 @@
-package com.example.tic_tac_4row.controller;
+package com.example.tic_tac_4row.controller.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -9,14 +9,16 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.tic_tac_4row.R;
+import com.example.tic_tac_4row.controller.fragment.Game4InRowFragment;
+import com.example.tic_tac_4row.controller.fragment.GameTicFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
     private Button mButton_tic,mButton_row;
     private FragmentManager mFragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_game);
         findViews();
         setListeners();
 

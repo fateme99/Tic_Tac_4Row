@@ -6,7 +6,7 @@
     android:background="@color/tic_bg"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".controller.GameTicFragment">
+    tools:context=".controller.fragment.GameTicFragment">
 
     <TextView
 

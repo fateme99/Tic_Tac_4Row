@@ -1,4 +1,4 @@
-package com.example.tic_tac_4row.controller;
+package com.example.tic_tac_4row.controller.fragment;
 
 import android.os.Bundle;
 
