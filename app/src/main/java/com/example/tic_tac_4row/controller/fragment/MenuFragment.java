@@ -23,6 +23,10 @@ public class MenuFragment extends Fragment {
     private static String EXTRA_NAME_PLAYER="com.example.tic_tac_4row_playerName";
     private TextInputLayout mTextInputLayout_name;
     private TextInputEditText mTextInputEditText_name;
+    private TextInputLayout mTextInputLayout_name1;
+    private TextInputEditText mTextInputEditText_name1;
+    private TextInputLayout mTextInputLayout_name2;
+    private TextInputEditText mTextInputEditText_name2;
     public MenuFragment() {
         // Required empty public constructor
     }
@@ -68,6 +72,35 @@ public class MenuFragment extends Fragment {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Intent intent=new Intent(getActivity(), GameActivity.class);
                                 intent.putExtra(EXTRA_NAME_PLAYER,mTextInputEditText_name.getText().toString());
+                                startActivity(intent);
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+                AlertDialog dialog=builder.create();
+                dialog.show();
+            }
+        });
+        mButton_twoPlayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+                LayoutInflater inflater=requireActivity().getLayoutInflater();
+                View view1=inflater.inflate(R.layout.signup_two,null);
+                mTextInputEditText_name1=view1.findViewById(R.id.text_input_name1);
+                mTextInputLayout_name1=view1.findViewById(R.id.layout_text_input_name1);
+                mTextInputEditText_name2=view1.findViewById(R.id.text_input_name2);
+                mTextInputLayout_name2=view1.findViewById(R.id.layout_text_input_name2);
+
+                builder.setView(view1)
+                        .setPositiveButton(R.string.submit, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent=new Intent(getActivity(), GameActivity.class);
                                 startActivity(intent);
                             }
                         })

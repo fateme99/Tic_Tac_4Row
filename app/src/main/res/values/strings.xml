@@ -11,5 +11,7 @@
     <string name="enter_name">please enter your name...</string>
     <string name="submit">SUBMIT</string>
     <string name="cancel">CANCEL</string>
-    <string name="name_sample">fateme</string>
+    <string name="user_name">user name</string>
+    <string name="user_name1">first user</string>
+    <string name="user_name2">second user</string>
 </resources>
