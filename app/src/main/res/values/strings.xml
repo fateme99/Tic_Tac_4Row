@@ -8,4 +8,8 @@
     <string name="game_row">Game : 4 in a Row</string>
     <string name="play_one_player">ONE PLAYER</string>
     <string name="play_two_player">TWO PLAYER</string>
+    <string name="enter_name">please enter your name...</string>
+    <string name="submit">SUBMIT</string>
+    <string name="cancel">CANCEL</string>
+    <string name="name_sample">fateme</string>
 </resources>

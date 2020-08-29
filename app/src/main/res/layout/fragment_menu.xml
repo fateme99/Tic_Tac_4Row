@@ -11,16 +11,16 @@
         android:id="@+id/one_player_btn"
         android:layout_width="wrap_content"
         android:text="@string/play_one_player"
-        android:textSize="@dimen/font_size_menu"
+        android:textSize="@dimen/font_size_large"
         android:padding="@dimen/padding_btn_menu"
         android:layout_marginBottom="@dimen/margin_menu"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/two_player_btn"
         android:layout_width="wrap_content"
-        android:text="@string/play_one_player"
+        android:text="@string/play_two_player"
         android:padding="@dimen/padding_btn_menu"
-        android:textSize="@dimen/font_size_menu"
+        android:textSize="@dimen/font_size_large"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>

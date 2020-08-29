@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/padding_btn_menu"
+    android:layout_height="match_parent">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:text="@string/enter_name"
+        android:textSize="@dimen/font_size_middle"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.textview.MaterialTextView>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_layout_name"
+        android:layout_height="wrap_content"
+        android:hint="@string/name_sample"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+</LinearLayout>
