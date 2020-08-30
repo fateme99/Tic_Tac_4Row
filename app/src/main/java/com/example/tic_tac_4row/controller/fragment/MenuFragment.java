@@ -20,7 +20,9 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class MenuFragment extends Fragment {
     private Button mButton_onePlayer,mButton_twoPlayer;
-    private static String EXTRA_NAME_PLAYER="com.example.tic_tac_4row_playerName";
+    public static String EXTRA_NAME_PLAYER="com.example.tic_tac_4row_playerName";
+    public static String EXTRA_NAME_PLAYER1="com.example.tic_tac_4row_playerName1";
+    public static String EXTRA_NAME_PLAYER2="com.example.tic_tac_4row_playerName2";
     private TextInputLayout mTextInputLayout_name;
     private TextInputEditText mTextInputEditText_name;
     private TextInputLayout mTextInputLayout_name1;
@@ -101,6 +103,8 @@ public class MenuFragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Intent intent=new Intent(getActivity(), GameActivity.class);
+                                intent.putExtra(EXTRA_NAME_PLAYER1,mTextInputEditText_name1.getText().toString());
+                                intent.putExtra(EXTRA_NAME_PLAYER2,mTextInputEditText_name2.getText().toString());
                                 startActivity(intent);
                             }
                         })

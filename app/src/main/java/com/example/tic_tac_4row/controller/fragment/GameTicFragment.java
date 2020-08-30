@@ -14,7 +14,12 @@ import com.example.tic_tac_4row.model.User;
 
 public class GameTicFragment extends Fragment {
     Button[][] mButtons=new Button[3][3];
-    private User mUser1,mUser2;
+    private User mUser1,mUser2,mUser;
+    private boolean is_one_player;
+    private String player_name;
+    private String player_name1;
+    private String player_name2;
+
     public GameTicFragment() {
 
     }
@@ -23,9 +28,7 @@ public class GameTicFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mUser1=new User("first user");
-        mUser2=new User("second user");
-        mUser1.setTurn(true);
+
 
     }
 
@@ -34,22 +37,26 @@ public class GameTicFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view= inflater.inflate(R.layout.fragment_game_tic, container, false);
-        findViews();
+        findViews(view);
         setListeners();
+        player_name=getActivity().getIntent().getStringExtra(MenuFragment.EXTRA_NAME_PLAYER);
+        player_name1=getActivity().getIntent().getStringExtra(MenuFragment.EXTRA_NAME_PLAYER1);
+        player_name2=getActivity().getIntent().getStringExtra(MenuFragment.EXTRA_NAME_PLAYER2);
+        isOnePlayer();
         return view;
     }
-    private void findViews(){
-        mButtons[0][0]=getActivity().findViewById(R.id.zero_zero_tic);
-        mButtons[0][1]=getActivity().findViewById(R.id.zero_one_tic);
-        mButtons[0][2]=getActivity().findViewById(R.id.zero_two_tic);
+    private void findViews(View view){
+        mButtons[0][0]=view.findViewById(R.id.zero_zero_tic);
+        mButtons[0][1]=view.findViewById(R.id.zero_one_tic);
+        mButtons[0][2]=view.findViewById(R.id.zero_two_tic);
 
-        mButtons[1][0]=getActivity().findViewById(R.id.one_zero_tic);
-        mButtons[1][1]=getActivity().findViewById(R.id.one_one_tic);
-        mButtons[1][2]=getActivity().findViewById(R.id.one_two_tic);
+        mButtons[1][0]=view.findViewById(R.id.one_zero_tic);
+        mButtons[1][1]=view.findViewById(R.id.one_one_tic);
+        mButtons[1][2]=view.findViewById(R.id.one_two_tic);
 
-        mButtons[2][0]=getActivity().findViewById(R.id.two_zero_tic);
-        mButtons[2][1]=getActivity().findViewById(R.id.two_one_tic);
-        mButtons[2][2]=getActivity().findViewById(R.id.two_two_tic);
+        mButtons[2][0]=view.findViewById(R.id.two_zero_tic);
+        mButtons[2][1]=view.findViewById(R.id.two_one_tic);
+        mButtons[2][2]=view.findViewById(R.id.two_two_tic);
 
 
     }
@@ -65,12 +72,30 @@ public class GameTicFragment extends Fragment {
                         if (mUser1.isTurn()){
                             mUser1.setTurn(false);
                             mUser2.setTurn(true);
-                            
+                            mButtons[finalI][finalJ].setBackground(getActivity().getResources().getDrawable(R.drawable.ic_launcher_background));
+                        }
+                        else {
+                            mUser1.setTurn(true);
+                            mUser2.setTurn(false);
+                            mButtons[finalI][finalJ].setBackground(getActivity().getResources().getDrawable(R.drawable.ic_launcher_foreground));
                         }
 
                     }
                 });
             }
+        }
+    }
+    private void isOnePlayer(){
+        if (player_name==null){
+            is_one_player=false;
+            mUser1=new User(player_name1);
+            mUser2=new User(player_name2);
+            mUser1.setTurn(true);
+        }
+        else {
+            is_one_player=true;
+            mUser=new User(player_name);
+            mUser.setTurn(true);
         }
     }
 }

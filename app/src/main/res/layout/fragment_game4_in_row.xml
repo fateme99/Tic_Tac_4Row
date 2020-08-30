@@ -17,6 +17,30 @@
         android:textStyle="bold"
         android:layout_height="wrap_content"/>
     <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/turn"
+            android:textSize="@dimen/font_size_middle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/font_size_middle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+
+            android:layout_height="wrap_content"
+            tools:text="fateme" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
