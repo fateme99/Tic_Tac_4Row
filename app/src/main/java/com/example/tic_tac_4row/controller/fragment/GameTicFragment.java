@@ -8,12 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.tic_tac_4row.R;
 import com.example.tic_tac_4row.model.User;
 
 public class GameTicFragment extends Fragment {
-    Button[][] mButtons=new Button[3][3];
+    ImageButton[][] mButtons=new ImageButton[3][3];
     private User mUser1,mUser2,mUser;
     private boolean is_one_player;
     private String player_name;
@@ -77,7 +78,7 @@ public class GameTicFragment extends Fragment {
                         else {
                             mUser1.setTurn(true);
                             mUser2.setTurn(false);
-                            mButtons[finalI][finalJ].setBackground(getActivity().getResources().getDrawable(R.drawable.ic_launcher_foreground));
+                            mButtons[finalI][finalJ].setBackgroundResource(R.drawable.ic_launcher_background);
                         }
 
                     }

@@ -6,4 +6,5 @@
     <color name="tic_bg">#2fd4d4</color>
     <color name="four_row_bg">#4be62c</color>
     <color name="black">#000</color>
+    <color name="white">#fff</color>
 </resources>
