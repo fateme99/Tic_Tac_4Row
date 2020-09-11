@@ -73,12 +73,12 @@ public class GameTicFragment extends Fragment {
                         if (mUser1.isTurn()){
                             mUser1.setTurn(false);
                             mUser2.setTurn(true);
-                            mButtons[finalI][finalJ].setBackground(getActivity().getResources().getDrawable(R.drawable.ic_launcher_background));
+                            mButtons[finalI][finalJ].setBackgroundResource(R.drawable.ic_circle1);
                         }
                         else {
                             mUser1.setTurn(true);
                             mUser2.setTurn(false);
-                            mButtons[finalI][finalJ].setBackgroundResource(R.drawable.ic_launcher_background);
+                            mButtons[finalI][finalJ].setBackgroundResource(R.drawable.ic_circle2);
                         }
 
                     }
