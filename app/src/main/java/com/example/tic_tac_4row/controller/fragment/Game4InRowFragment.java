@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,7 +85,7 @@ public class Game4InRowFragment extends Fragment {
         mButtons[2][3]=view.findViewById(R.id.two_three);
         mButtons[2][4]=view.findViewById(R.id.two_four);
 
-        mButtons[3][0]=view.findViewById(R.id.three_one);
+        mButtons[3][0]=view.findViewById(R.id.three_zero);
         mButtons[3][1]=view.findViewById(R.id.three_one);
         mButtons[3][2]=view.findViewById(R.id.three_two);
         mButtons[3][3]=view.findViewById(R.id.three_three);
@@ -106,26 +107,45 @@ public class Game4InRowFragment extends Fragment {
                 mButtons[i][j].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mButtons[finalI][finalJ].setClickable(false);
+                        int index=finalI;
+                        for (int k = 4; k >=0 ; k--) {
+                            if (mArrey_for_check[k][finalJ]==0){
+                                index=k;
+                                break;
+                            }
+                        }
+                        mButtons[index][finalJ].setClickable(false);
                         if (mUser1.isTurn()){
                             mUser1.setTurn(false);
                             mUser2.setTurn(true);
-                            mButtons[finalI][finalJ].setImageResource(R.drawable.ic_circle1);
-                            mArrey_for_check[finalI][finalJ]=1;
-                            if (checkFinish(finalI,finalJ)){
+                            mButtons[index][finalJ].setImageResource(R.drawable.ic_circle1);
+                            mArrey_for_check[index][finalJ]=1;
+                            if (checkFinish(index,finalJ)){
                                 Snackbar.make(mTextView_snackBar,"Game Over "+player_name1+" wone!",Snackbar.LENGTH_LONG).show();
-                                getActivity().finish();
+                                Handler handler=new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        getActivity().finish();
+                                    }
+                                },3000);
                             }
 
                         }
                         else {
                             mUser1.setTurn(true);
                             mUser2.setTurn(false);
-                            mButtons[finalI][finalJ].setImageResource(R.drawable.ic_circle2);
-                            mArrey_for_check[finalI][finalJ]=2;
-                            if (checkFinish(finalI,finalJ)){
+                            mButtons[index][finalJ].setImageResource(R.drawable.ic_circle2);
+                            mArrey_for_check[index][finalJ]=2;
+                            if (checkFinish(index,finalJ)){
                                 Snackbar.make(mTextView_snackBar,"Game Over "+player_name2+" wone!",Snackbar.LENGTH_LONG).show();
-                                getActivity().finish();
+                                Handler handler=new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        getActivity().finish();
+                                    }
+                                },3000);
                             }
                         }
 

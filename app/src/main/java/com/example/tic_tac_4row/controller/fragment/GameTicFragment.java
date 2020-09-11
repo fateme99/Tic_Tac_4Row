@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +89,13 @@ public class GameTicFragment extends Fragment {
                             mArrey_for_check[finalI][finalJ]=1;
                             if (checkFinish(finalI,finalJ)){
                                 Snackbar.make(mTextView_snackBar,"Game Over "+player_name1+" wone!",Snackbar.LENGTH_LONG).show();
-                                getActivity().finish();
+                                Handler handler=new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        getActivity().finish();
+                                    }
+                                },3000);
                             }
 
                         }
@@ -99,7 +106,14 @@ public class GameTicFragment extends Fragment {
                             mArrey_for_check[finalI][finalJ]=2;
                             if (checkFinish(finalI,finalJ)){
                                 Snackbar.make(mTextView_snackBar,"Game Over "+player_name2+" wone!",Snackbar.LENGTH_LONG).show();
-                                getActivity().finish();
+                                Handler handler=new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        getActivity().finish();
+                                    }
+                                },3000);
+
                             }
                         }
 
