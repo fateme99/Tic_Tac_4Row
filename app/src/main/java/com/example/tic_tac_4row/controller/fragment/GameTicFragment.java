@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.nfc.Tag;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -32,11 +33,17 @@ public class GameTicFragment extends Fragment {
     private String player_name1;
     private String player_name2;
     private TextView mTextView_snackBar;
+    private static final  String ARREY="arrey_key";
 
     public GameTicFragment() {
 
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(ARREY,mArrey_for_check);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,6 +63,9 @@ public class GameTicFragment extends Fragment {
         player_name1=getActivity().getIntent().getStringExtra(MenuFragment.EXTRA_NAME_PLAYER1);
         player_name2=getActivity().getIntent().getStringExtra(MenuFragment.EXTRA_NAME_PLAYER2);
         isOnePlayer();
+        if (savedInstanceState!=null)
+            mArrey_for_check= (int[][]) savedInstanceState.getSerializable(ARREY);
+        updateUI();
         return view;
     }
     private void findViews(View view){
@@ -149,6 +159,21 @@ public class GameTicFragment extends Fragment {
             is_one_player=true;
             mUser=new User(player_name);
             mUser.setTurn(true);
+        }
+    }
+    private void updateUI(){
+        for (int i = 0; i <3 ; i++) {
+            for (int j = 0; j <3 ; j++) {
+                switch (mArrey_for_check[i][j]){
+                    case 1:
+                        mButtons[i][j].setImageResource(R.drawable.ic_circle2);
+                        break;
+                    case 2:
+                        mButtons[i][j].setImageResource(R.drawable.ic_circle2);
+                        break;
+
+                }
+            }
         }
     }
 }

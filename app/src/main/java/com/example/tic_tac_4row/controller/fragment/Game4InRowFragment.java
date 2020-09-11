@@ -1,6 +1,5 @@
 package com.example.tic_tac_4row.controller.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,7 +19,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class Game4InRowFragment extends Fragment {
 
-    private static final String ARG_ARREY="com.example.tic_tac_4row.arrey";
+    private static final String ARREY ="arrey_key";
     ImageView[][] mButtons=new ImageButton[5][5];
     int[][] mArrey_for_check=new int[5][5];
     private TextView mTextView_snackBar;
@@ -37,8 +36,7 @@ public class Game4InRowFragment extends Fragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        Intent intent=new Intent();
-        intent.putExtra(ARG_ARREY,mArrey_for_check);
+        outState.putSerializable(ARREY,mArrey_for_check);
     }
 
 
@@ -60,7 +58,8 @@ public class Game4InRowFragment extends Fragment {
         player_name1=getActivity().getIntent().getStringExtra(MenuFragment.EXTRA_NAME_PLAYER1);
         player_name2=getActivity().getIntent().getStringExtra(MenuFragment.EXTRA_NAME_PLAYER2);
         isOnePlayer();
-        mArrey_for_check= (int[][]) getActivity().getIntent().getSerializableExtra(ARG_ARREY);
+        if (savedInstanceState !=null)
+            mArrey_for_check= (int[][]) savedInstanceState.getSerializable(ARREY);
         if (mArrey_for_check==null)
             mArrey_for_check=new int[5][5];
         updateUi();
@@ -200,10 +199,7 @@ public class Game4InRowFragment extends Fragment {
     }
 
     private void updateUi(){
-        if (mArrey_for_check==null){
-
-        }
-        else {
+        if (mArrey_for_check!=null){
             for (int i = 0; i <5 ; i++) {
                 for (int j = 0; j <5 ; j++) {
                     if (mArrey_for_check[i][j]==1){
