@@ -1,5 +1,9 @@
 package com.example.tic_tac_4row.controller.fragment;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,12 +13,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
+import android.widget.ZoomButton;
 
 import com.example.tic_tac_4row.R;
 import com.example.tic_tac_4row.model.User;
 
 public class GameTicFragment extends Fragment {
-    ImageButton[][] mButtons=new ImageButton[3][3];
+    ImageView[][] mButtons=new ImageButton[3][3];
+    int[][] mArrey_for_check=new int[3][3];
     private User mUser1,mUser2,mUser;
     private boolean is_one_player;
     private String player_name;
@@ -73,18 +81,39 @@ public class GameTicFragment extends Fragment {
                         if (mUser1.isTurn()){
                             mUser1.setTurn(false);
                             mUser2.setTurn(true);
-                            mButtons[finalI][finalJ].setBackgroundResource(R.drawable.ic_circle1);
+                            mButtons[finalI][finalJ].setImageResource(R.drawable.ic_circle1);
+                            mArrey_for_check[finalI][finalJ]=1;
+
+
                         }
                         else {
                             mUser1.setTurn(true);
                             mUser2.setTurn(false);
-                            mButtons[finalI][finalJ].setBackgroundResource(R.drawable.ic_circle2);
+                            mButtons[finalI][finalJ].setImageResource(R.drawable.ic_circle2);
+                            mArrey_for_check[finalI][finalJ]=2;
+                        }
+                        if (checkFinish(finalI,finalJ)){
+                            Toast.makeText(getActivity(), "Game finish", Toast.LENGTH_SHORT).show();
                         }
 
                     }
                 });
             }
         }
+    }
+
+    private boolean checkFinish(int i , int j){
+
+        if ( mArrey_for_check[(i + 1) % 3][j]== mArrey_for_check[i][j] && mArrey_for_check[(i+2)%3][j]==mArrey_for_check[i][j]){
+            return true;
+        }
+        else if ( mArrey_for_check[i][(j + 1) % 3]== mArrey_for_check[i][j] && mArrey_for_check[i][(j+2)%3]==mArrey_for_check[i][j]){
+            return true;
+        }
+        else if (mArrey_for_check[(i+1)%3][(j+1)%3]==mArrey_for_check[i][j] && mArrey_for_check[(i+2)%3][(j+2)%3]==mArrey_for_check[i][j]){
+            return true;
+        }
+        return false;
     }
     private void isOnePlayer(){
         if (player_name==null){
