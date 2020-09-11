@@ -14,11 +14,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ZoomButton;
 
 import com.example.tic_tac_4row.R;
 import com.example.tic_tac_4row.model.User;
+import com.google.android.material.snackbar.Snackbar;
 
 public class GameTicFragment extends Fragment {
     ImageView[][] mButtons=new ImageButton[3][3];
@@ -28,6 +30,7 @@ public class GameTicFragment extends Fragment {
     private String player_name;
     private String player_name1;
     private String player_name2;
+    private TextView mTextView_snackBar;
 
     public GameTicFragment() {
 
@@ -67,7 +70,7 @@ public class GameTicFragment extends Fragment {
         mButtons[2][1]=view.findViewById(R.id.two_one_tic);
         mButtons[2][2]=view.findViewById(R.id.two_two_tic);
 
-
+        mTextView_snackBar=view.findViewById(R.id.snackBar_container);
     }
     private void setListeners(){
         for (int i = 0; i <3 ; i++) {
@@ -83,7 +86,10 @@ public class GameTicFragment extends Fragment {
                             mUser2.setTurn(true);
                             mButtons[finalI][finalJ].setImageResource(R.drawable.ic_circle1);
                             mArrey_for_check[finalI][finalJ]=1;
-
+                            if (checkFinish(finalI,finalJ)){
+                                Snackbar.make(mTextView_snackBar,"Game Over "+player_name1+" wone!",Snackbar.LENGTH_LONG).show();
+                                getActivity().finish();
+                            }
 
                         }
                         else {
@@ -91,10 +97,13 @@ public class GameTicFragment extends Fragment {
                             mUser2.setTurn(false);
                             mButtons[finalI][finalJ].setImageResource(R.drawable.ic_circle2);
                             mArrey_for_check[finalI][finalJ]=2;
+                            if (checkFinish(finalI,finalJ)){
+                                Snackbar.make(mTextView_snackBar,"Game Over "+player_name2+" wone!",Snackbar.LENGTH_LONG).show();
+                                getActivity().finish();
+                            }
                         }
-                        if (checkFinish(finalI,finalJ)){
-                            Toast.makeText(getActivity(), "Game finish", Toast.LENGTH_SHORT).show();
-                        }
+
+
 
                     }
                 });

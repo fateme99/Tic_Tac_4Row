@@ -44,23 +44,32 @@
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/zero_zero"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/zero_one"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/zero_two"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/zero_three"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
             android:id="@+id/zero_four"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
@@ -69,23 +78,32 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/one_zero"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/one_one"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/one_two"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/one_three"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
             android:id="@+id/one_four"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
@@ -94,23 +112,32 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/two_zero"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/two_one"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/two_two"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/two_three"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
             android:id="@+id/two_four"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
@@ -119,23 +146,32 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/three_zero"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/three_one"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/three_two"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/three_three"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
             android:id="@+id/three_four"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
@@ -144,28 +180,41 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/four_zero"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/four_one"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/four_two"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:layout_marginRight="5dp"
             android:id="@+id/four_three"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
-        <Button
+        <ImageButton
+            android:backgroundTint="@color/white"
             android:id="@+id/four_four"
             android:layout_width="50dp"
             android:layout_height="50dp"/>
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/snackBar_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
 
